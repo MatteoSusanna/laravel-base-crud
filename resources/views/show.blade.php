@@ -12,5 +12,4 @@
         <div><strong>sale_date:</strong>{{$comic->sale_date}}</div>
         <div><strong>type:</strong>{{$comic->type}}</div>
     </div>
-
 @endsection
