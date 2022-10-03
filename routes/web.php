@@ -17,4 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/homepage', 'ComicsController@index')->name('homepage');
+
+// Puoi usare questo
 Route::resource('comics', 'ComicsController');
+
+// oppure
+
+/*
+Route::get('/comics', 'ComicsController@index')->name('comics.index');
+Route::get('/comics/{comic}', 'ComicsController@show')->name('comics.show');
+Route::get('/comics/create', 'ComicsController@create')->name('comics.create');
+...
+*/

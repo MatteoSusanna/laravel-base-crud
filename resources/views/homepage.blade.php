@@ -3,7 +3,7 @@
 @section('titolo', 'homepage')
 
 @section('content')
-
+<div class="container">
     <table class="table table-hover">
         <thead>
             <tr>
@@ -17,15 +17,21 @@
             </tr>
         </thead>
         <tbody>
-            
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
+
+            @foreach ($comics as $comic)
+                <tr>
+                    <th scope="row">{{$comic->id}}</th>
+                    <td>{{$comic->title}}</td>
+                    <td>{{$comic->thumb}}</td>
+                    <td>{{$comic->price}}</td>
+                    <td>{{$comic->series}}</td>
+                    <td>{{$comic->sale_date}}</td>
+                    <td>{{$comic->type}}</td>
+                </tr>
+            @endforeach
             
         </tbody>
     </table>
+</div>
 
 @endsection
