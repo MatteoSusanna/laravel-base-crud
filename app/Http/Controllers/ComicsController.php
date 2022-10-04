@@ -85,7 +85,7 @@ class ComicsController extends Controller
             $newComic->update($dati);
             $newComic->save();
     
-            return redirect()->route('comics.index');
+            return redirect()->route('comics.edit', ['comic' => $newComic->id])->with('status', 'Applicato con successo!!');
     }
 
     /**
