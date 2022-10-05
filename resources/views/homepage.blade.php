@@ -39,6 +39,7 @@
                                 <button type="submit" class="btn btn-danger">Cancella</button>
                             </form>
                         </td>
+                    </th>
                 </tr>
             @endforeach
             

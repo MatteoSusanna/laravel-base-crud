@@ -14,8 +14,7 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        $comics = Comic::all();
-
+        $comics = Comic::orderBy('id', 'desc')->get();
         return view('homepage', compact('comics'));
     }
 
@@ -37,6 +36,18 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate( 
+                                [
+                                    'title' => 'required|max:255|min:5',
+                                    'description' => 'required|max:65535|min:5',
+                                    'thumb' => 'required|url',
+                                    'price' => 'required|min:2|max:30',
+                                    'series' => 'required|min:3|max:50',
+                                    'sale_date' => 'required|date',
+                                    'type' => 'required|max:40',
+                                ]
+                            );
+
         $dati = $request->all();
 
         $newComic = new Comic();
@@ -52,9 +63,8 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        $comic = Comic::FindOrFail($id);
         return view('show', compact('comic'));
     }
 
@@ -64,9 +74,8 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        $comic = Comic::FindOrFail($id);
         return view('edit', compact('comic'));
     }
 
@@ -77,9 +86,21 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $newComic)
     {
-        $newComic = Comic::FindOrFail($id);
+
+        $request->validate( 
+                                [
+                                    'title' => 'required|max:255|min:5',
+                                    'description' => 'required|max:65535|min:5',
+                                    'thumb' => 'required|url',
+                                    'price' => 'required|min:2|max:30',
+                                    'series' => 'required|min:3|max:50',
+                                    'sale_date' => 'required|date',
+                                    'type' => 'required|max:40',
+                                ]
+                            );
+        
 
         $dati = $request->all();
         $newComic->update($dati);
