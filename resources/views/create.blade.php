@@ -11,7 +11,7 @@
         {{-- Primo input--}}
         <div class="mb-3">
             <label for="title" class="form-label text-white fs-4">Title</label>
-            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Title" value="{{old('title')}}">
+            <input type="text" class="form-control @error('title')is-invalid @enderror" id="title" name="title" placeholder="Title" value="{{old('title')}}">
             
             @error('title')
                 <div class="invalid-feedback">{{$message}}</div>
