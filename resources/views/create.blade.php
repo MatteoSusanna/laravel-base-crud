@@ -41,11 +41,12 @@
 
         <div class="mb-3">
             <label for="description" class="form-label text-white fs-4">Description</label>
-            <textarea name="description" id="type" cols="30" rows="7" class="form-control" placeholder="Description"></textarea>
+            <textarea name="description" id="type" cols="30" rows="6" class="form-control" placeholder="Description"></textarea>
         </div>
   
     
         <button type="submit" class="btn btn-dark">Salva</button>
+        <a class="btn btn-success" href="{{route('comics.index')}}">Indietro</a>
   </form>
 </div>
 
