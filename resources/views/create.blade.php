@@ -71,7 +71,7 @@
         {{-- Settimo input--}}
         <div class="mb-3">
             <label for="description" class="form-label text-white fs-4">Description</label>
-            <textarea name="description @error('description') is-invalid @enderror" id="type" cols="30" rows="6" class="form-control" placeholder="Description" value="{{old('description')}}"></textarea>
+            <textarea name="description" id="type" cols="30" rows="6" class="form-control @error('description') is-invalid @enderror" placeholder="Description" value="{{old('description')}}"></textarea>
             
             @error('description')
                 <div class="invalid-feedback">{{$message}}</div>
