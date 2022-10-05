@@ -81,11 +81,11 @@ class ComicsController extends Controller
     {
         $newComic = Comic::FindOrFail($id);
 
-            $dati = $request->all();
-            $newComic->update($dati);
-            $newComic->save();
+        $dati = $request->all();
+        $newComic->update($dati);
+        $newComic->save();
     
-            return redirect()->route('comics.edit', ['comic' => $newComic->id])->with('status', 'Applicato con successo!!');
+        return redirect()->route('comics.edit', ['comic' => $newComic->id])->with('status', 'Applicato con successo!!');
     }
 
     /**
