@@ -11,5 +11,6 @@
         <div class="mb-2"><strong>Series:</strong>{{$comic->series}}</div>
         <div class="mb-2"><strong>Sale_date:</strong>{{$comic->sale_date}}</div>
         <div><strong>Type:</strong>{{$comic->type}}</div>
+        <a class="btn btn-success" href="{{route('comics.index')}}">Indietro</a>
     </div>
 @endsection

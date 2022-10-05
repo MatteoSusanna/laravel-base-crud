@@ -53,7 +53,7 @@
   
     
         <button type="submit" class="btn btn-dark text-white">Applica</button>
-        <a class="btn btn-success" href="{{route('comics.index')}}">Salva</a>
+        <a class="btn btn-success" href="{{route('comics.index')}}">Indietro</a>
   </form>
 </div>
 
